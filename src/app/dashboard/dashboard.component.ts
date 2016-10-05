@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {DashboardItem} from "./model/dashboarditem";
+import {DashboardService} from "./service/dashboard.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -6,11 +8,16 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
-    constructor() {
+
+    private dashboard:DashboardItem;
+
+    constructor(private service:DashboardService) {
     }
 
     ngOnInit() {
+        this.service.get().subscribe(result => {
+            this.dashboard = result[0]
+        });
     }
 
 }

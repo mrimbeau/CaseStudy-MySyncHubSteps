@@ -1,0 +1,34 @@
+.demo-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    padding: 30px;
+}
+
+.demo-card-container .value {
+    color: #F70055;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.demo-card-container md-card-title {
+    color: white;
+}
+
+.demo-card-container md-card-subtitle {
+    color: white;
+}
+
+.demo-card-container md-card {
+    margin: 0 16px 16px 0;
+    width: 350px;
+}
+
+.demo-card-container img {
+    background-color: gray;
+}
+
+.demo-card-container md-card {
+    background: #465A65;
+}
+

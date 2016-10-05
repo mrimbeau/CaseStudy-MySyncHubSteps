@@ -1,3 +1,60 @@
-<p>
-  dashboard works!
-</p>
+<md-toolbar style="padding: 0px;">
+    <div class="header-container">
+        <div class="start"></div>
+        <div class="title">
+            <div class="container">
+                <h4>Synch Dashboard</h4>
+            </div>
+        </div>
+        <div class="right header-text">
+            <p><span class="arrow-color">OMS</span> = Order Management System</p>
+            <p><span class="arrow-color">OS</span> = Online Shop</p>
+        </div>
+        <div class="end"></div>
+    </div>
+</md-toolbar>
+<div class="demo-card-container">
+    <md-card routerLink="/orders">
+        <md-card-title-group class="online-shop">
+            <md-card-title>ONLINE SHOP</md-card-title>
+            <md-card-subtitle>Article with no article ID</md-card-subtitle>
+        </md-card-title-group>
+        <p class="value">{{dashboard?.ArticleNoArticleId}}</p>
+    </md-card>
+
+    <md-card routerLink="/orders">
+        <md-card-title-group class="article-not-in-oms">
+            <md-card-title>OS
+                <md-icon class="arrow-color">trending_flat</md-icon> OMS</md-card-title>
+            <md-card-subtitle>Article not present in OMS</md-card-subtitle>
+        </md-card-title-group>
+        <p class="value">{{dashboard?.ArticleNotPresentInOMS}}</p>
+    </md-card>
+
+    <md-card routerLink="/orders">
+        <md-card-title-group class="article-price-mismatch">
+            <md-card-title>OS
+                <md-icon class="arrow-color">trending_flat</md-icon> OMS</md-card-title>
+            <md-card-subtitle>Price do not match</md-card-subtitle>
+        </md-card-title-group>
+        <p class="value">{{dashboard?.PricesDoNotMatch}}</p>
+    </md-card>
+
+    <md-card routerLink="/orders">
+        <md-card-title-group class="not-synchronized">
+            <md-card-title>OS
+                <md-icon class="arrow-color">trending_flat</md-icon> OMS</md-card-title>
+            <md-card-subtitle>New unsychronized orders</md-card-subtitle>
+        </md-card-title-group>
+        <p class="value">{{dashboard?.UnsynchedOrders}}</p>
+    </md-card>
+
+    <md-card routerLink="/orders">
+        <md-card-title-group class="different-stocks">
+            <md-card-title>OMS
+                <md-icon class="arrow-color">trending_flat</md-icon> OS</md-card-title>
+            <md-card-subtitle>Article with different stocks</md-card-subtitle>
+        </md-card-title-group>
+        <p class="value">{{dashboard?.ArticleDiverseStock}}</p>
+    </md-card>
+</div>
