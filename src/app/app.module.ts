@@ -4,21 +4,23 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
 import {AppComponent} from './app.component';
+import {DashboardModule} from './dashboard';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MaterialModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        MaterialModule.forRoot(),
+        DashboardModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent, DashboardComponent]
 })
 export class AppModule {
 }
