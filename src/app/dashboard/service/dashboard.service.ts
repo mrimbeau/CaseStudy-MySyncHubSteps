@@ -1,21 +1,18 @@
 import {Injectable} from '@angular/core';
 import {DashboardItem} from "../model/dashboarditem";
 import {Http} from "@angular/http";
+import {ConfigurationService, ServiceBase} from "./../../shared";
 
 @Injectable()
-export class DashboardService {
+export class DashboardService extends ServiceBase<DashboardItem> {
 
-    public dashboard:DashboardItem;
-    url:string = "http://fakesynchhub.azurewebsites.net/api/Dashboard";
+  public dashboard:DashboardItem;
 
+  constructor(http:Http, private configuration:ConfigurationService) {
+    super(http, 'DashboardService:DashboardItem');
+  }
 
-    constructor(private http:Http) {
-    }
-
-    get() {
-        return this.http.get(this.url, {withCredentials: true}).map(res => {
-            let data = res.json();
-            return data;
-        });
-    }
+  protected getServiceUrl():string {
+    return this.configuration.dashboardUrl;
+  }
 }
